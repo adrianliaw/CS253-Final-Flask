@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block options %}
+	<a href="/{{ page.page_id }}">
+		<div class="button view">
+			<span>
+				VIEW
+			</span>
+		</div>
+	</a>
+	<a href="/home">
+		<div class="button home">
+			<span>
+				HOME
+			</span>
+		</div>
+	</a>
+	<a href="/_history/{{ page.page_id }}">
+		<div class="button history">
+			<span>
+				HISTORY
+			</span>
+		</div>
+	</a>
+{% endblock %}
+
+{% block content %}
+	
+	<div class="page-content">
+		<div class="markdown-body">
+			<form method="post">
+				<textarea name="content">{{ page.content }}</textarea>
+				<br><br>
+				<input type="submit" value="SAVE" name="save_or_preview">
+				<input type="submit" value="PREVIEW" name="save_or_preview">
+			</form>
+			{% if md2html %}
+				{{ md2html(page.content) | safe }}
+			{% endif %}
+		</div>
+	</div>
+
+{% endblock %}

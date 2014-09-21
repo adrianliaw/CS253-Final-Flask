@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block options %}
+	{% if user %}
+		<a href="/_edit/{{ page.page_id }}">
+			<div class="button edit">
+				<span>
+					EDIT
+				</span>
+			</div>
+		</a>
+	{% endif %}
+	<a href="/_history/{{ page.page_id }}">
+		<div class="button history">
+			<span>
+				HISTORY
+			</span>
+		</div>
+	</a>
+	<a href="/home">
+		<div class="button home">
+			<span>
+				HOME
+			</span>
+		</div>
+	</a>
+{% endblock %}
+
+{% block content %}
+	<div class="page-content">
+		<div class="markdown-body">
+			{{ md2html(page.content) | safe }}
+		</div>
+	</div>
+{% endblock %}

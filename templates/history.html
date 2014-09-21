@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block options %}
+	<a href="/{{ page }}">
+		<div class="button view">
+			<span>
+				VIEW
+			</span>
+		</div>
+	</a>
+	<a href="/_edit/{{ page }}">
+		<div class="button edit">
+			<span>
+				EDIT
+			</span>
+		</div>
+	</a>
+	<a href="/home">
+		<div class="button home">
+			<span>
+				HOME
+			</span>
+		</div>
+	</a>
+{% endblock %}
+
+{% block content %}
+	<div class="page-content">
+		<div class="markdown-body">
+			<table>
+				<thead>
+					<tr>
+						<th>Date</th>
+						<th>Content</th>
+						<th>View/Edit</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for hist in pages %}
+						<tr class="{{ loop.cycle('white', 'gray') }}">
+							<td>{{ hist.created.__str__()[:10] }}</td>
+							<td>{{ hist.content }}</td>
+							<td>
+								<a href="/{{ hist.page_id }}?v={{loop.index0}}">view</a>
+								<a href="/_edit/{{ hist.page_id }}?v={{loop.index0}}">edit</a>
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+{% endblock %}

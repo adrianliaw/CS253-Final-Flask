@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block options %}
+	<a href="/home">
+		<div class="button home">
+			<span>
+				HOME
+			</span>
+		</div>
+	</a>
+{% endblock %}
+
+{% block content %}
+	<div class="page-content">
+		<div class="markdown-body">
+			<form method="post">
+				<h1>Login</h1>
+				<h3>Username: <br>
+					<input type="text" name="username" value="{{ username }}" placeholder="Username">
+				</h3>
+				<h3>Password: <br>
+					<input type="password" name="password" placeholder="Password">
+				</h3>
+				<div class="error">
+					{{ error }}
+				</div>
+				<input type="submit" value="LOGIN">
+			</form>
+		</div>
+	</div>
+{% endblock %}

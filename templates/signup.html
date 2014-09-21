@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block options %}
+	<a href="/home">
+		<div class="button home">
+			<span>
+				HOME
+			</span>
+		</div>
+	</a>
+{% endblock %}
+
+{% block content %}
+	<div class="page-content">
+		<div class="markdown-body">
+			<form method="post">
+				<h1>Signup</h1>
+				<h3>Username: <br>
+					<input type="text" name="username" value="{{ username }}" placeholder="A~Z a~z 0~9 _ - length 3~20">
+					<p class="error">{{ er_username }}</p>
+				</h3>
+				<h3>Password: <br>
+					<input type="password" name="password" placeholder="any charactors, length 3~20">
+					<p class="error">{{ er_password }}</p>
+				</h3>
+				<h3>Verify Password: <br>
+					<input type="password" name="verify" placeholder="Type again">
+					<p class="error">{{ er_verify }}</p>
+				</h3>
+				<h3>Email (Optional): <br>
+					<input type="text" name="email" value="{{ email }}" placeholder="ex: foo@example.com">
+					<p class="error">{{ er_email }}</p>
+				</h3>
+				<br>
+				<input type="submit" value="SIGNUP">
+				
+			</form>
+		</div>
+	</div>
+{% endblock %}
