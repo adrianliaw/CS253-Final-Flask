@@ -39,7 +39,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/adrianliaw/Desktop/projects/cs253-final/venv"
+VIRTUAL_ENV="/Users/adrianliaw/Desktop/music/CS253-Final-Flask/venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

@@ -20,7 +20,11 @@ def wikipage(uid):
             page = pages[0]
         else:
             page = None
-    else: page = pages[0]
+    else:
+        try:
+            page = pages[0]
+        except IndexError:
+            page = None
     user = Users.find_one({"_id":ObjectId(session.get("user_id"))})
     if page:
         return render_template(
@@ -103,7 +107,7 @@ def edit(uid):
                 page = pages[0]
             else:
                 page = NullObject(page_id=uid, content="")
-        elif pages:
+        elif pages.count():
             page = pages[0]
         else:
             page = NullObject(page_id=uid, content="")
