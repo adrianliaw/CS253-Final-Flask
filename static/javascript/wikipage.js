@@ -1,8 +1,6 @@
 $(document).ready(function () {
-	$(".button").css(
-		"height", 
-		$(".button").width()
-	)
+    $(".button").height("50px")
+    .width("50px")
 	.addClass("rotated2")
 	.hover(
 		function () {
@@ -10,4 +8,9 @@ $(document).ready(function () {
 			$(this).toggleClass("rotated2");
 		}
 	);
+    $(window).resize(function () {
+        $(".button").height(function () {
+            return $(this).width();
+        })
+    });
 });

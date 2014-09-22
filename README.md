@@ -9,6 +9,9 @@ This is Udacity CS253 final project in Flask.
 - Using MongoDB
 - Previews
 
+## PAGE
+- ### [CS253 Final](http://cs253-final.herokuapp.com/)
+
 ## TODO
 
 ### Things you have to install:
@@ -17,7 +20,13 @@ This is Udacity CS253 final project in Flask.
 - virtualenv
 
 ### Step by Step Guide:
-First run MongoDB:
+
+Clone Repository:
+```
+git clone https://github.com/adrianliaw/CS253-Final-Flask.git
+```
+
+Run MongoDB:
 ```
 sudo mongod
 ```
@@ -39,13 +48,9 @@ Install Requirement packages:
 pip install -r requirements.txt
 ```
 
-Run main.py:
+Run gunicorn (WSGI server):
 ```
-python main.py
+gunicorn main:app
 ```
 
-You'll see this if correct:
-```
- * Running on http://127.0.0.1:5000/
- * Restarting with reloader
-```
+Go to 127.0.0.1:8000 (localhost:8000)
