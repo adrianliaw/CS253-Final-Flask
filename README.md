@@ -10,7 +10,7 @@ This is Udacity CS253 final project in Flask.
 - Previews
 
 ## PAGE
-- ### [CS253 Final](http://cs253-final.herokuapp.com/)
+### [CS253 Final](http://cs253-final.herokuapp.com/)
 
 ## TODO
 
