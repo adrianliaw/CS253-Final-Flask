@@ -8,6 +8,7 @@ This is Udacity CS253 final project in Flask.
 - Using Markdown as page content
 - Using MongoDB
 - Previews
+- Deploy on Heroku
 
 ## PAGE
 ### [CS253 Final](http://cs253-final.herokuapp.com/)
